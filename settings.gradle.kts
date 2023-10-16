@@ -5,16 +5,16 @@ val monocleVersion: String by settings
 pluginManagement {
     val javafxPluginVersion: String by settings
     val versionsPluginVersion: String by settings
-    val macAppBundleVersion: String by settings
+   // val macAppBundleVersion: String by settings
 
     plugins {
         id("org.openjfx.javafxplugin") version javafxPluginVersion
         id ("com.github.ben-manes.versions") version versionsPluginVersion
-        id("edu.sc.seis.macAppBundle") version macAppBundleVersion
+        //id("edu.sc.seis.macAppBundle") version macAppBundleVersion
     }
 }
 
-enableFeaturePreview("VERSION_ORDERING_V2")
+//enableFeaturePreview("VERSION_ORDERING_V2")
 
 rootProject.name = "jgnash"
 

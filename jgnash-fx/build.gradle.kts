@@ -6,6 +6,7 @@ val testFxVersion: String by project
 val monocleVersion: String by project
 val commonsLangVersion: String by project
 val commonsMathVersion: String by project
+val nashornVersion: String by project
 
 val junitVersion: String by project
 val junitExtensionsVersion: String by project
@@ -15,13 +16,13 @@ plugins {
     application // creates a task to run the full application
     `java-library`
     id("org.openjfx.javafxplugin")
-    id("edu.sc.seis.macAppBundle")
+    //id("edu.sc.seis.macAppBundle")
 }
 
 val jGnashVersion : String = version.toString()
 
 application {
-    mainClassName = "jgnash.app.jGnash"
+    mainClass.set("jgnash.app.jGnash")
 }
 
 dependencies {
@@ -41,6 +42,8 @@ dependencies {
 
     implementation("org.apache.commons:commons-lang3:$commonsLangVersion")
     implementation("org.apache.commons:commons-math3:$commonsMathVersion")
+
+    implementation("org.openjdk.nashorn:nashorn-core:$nashornVersion")
 
     // Hack to include all javafx platforms in the classpath
     // The platform specific libraries are excluded when the distribution is assembled
@@ -149,6 +152,7 @@ distributions {
     }
 }
 
+/*
 macAppBundle {
     appStyle = "universalJavaApplicationStub"
     appName = "jGnash-$jGnashVersion"
@@ -156,6 +160,7 @@ macAppBundle {
     icon = "../deployfx/gnome-money.icns"
     javaProperties["apple.laf.useScreenMenuBar"] = "true"
 }
+*/
 
 /**
  * Returns a proper Class-Path entry for the manifest file

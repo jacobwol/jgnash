@@ -39,7 +39,7 @@
                 <RowConstraints vgrow="NEVER"/>
             </rowConstraints>
             <Label text="%Label.DateFormat" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <ComboBox fx:id="dateFormatComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="dateFormatComboBox" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
         </GridPane>
     </TitledPane>
 </VBox>
